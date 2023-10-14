@@ -1,0 +1,24 @@
+# awake
+You awake on the ground. It's cool and damp, thick with moss. The ground is black stone, wet with clear water, and foliage creeping up through the cracks. Beds of moss lay in patches. The air is thin, and it feels like it just rained. You are outside, but surrounded by walls of black stone.
+-
+look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
+sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
+
+
+# stand
+
+
+
+# sleep
+You turn over and fall back asleep. After a long darkness, you awake again. The air feels the same, the light doesn't appear to have changed. You are unsure how much time has passed, but you feel rested.
+-
+look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
+
+
+# nightmare
+You turn over and fall back asleep. Not long after, you feel an itch on your arm. Jolting awake, you see a black scorpion the size of a rabbit curiously crawling up your arm. Without hesitation, you shuffle to your feet - and a second, later the scorpion is gone. You are then back on the ground, now waking up from a false awakening. You are unsure how much time has passed, but you feel very, very awake now.
+-
+look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
+
+
+# leave
