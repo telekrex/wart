@@ -1,0 +1,17 @@
+
+Construction (Core)
+1. make its mechanics work
+2. add fallbacks / error handling
+3. clean up the code
+4. clean up the terminal display
+5. strengthen example content
+6. make a pretty [optional] GUI (pygame?)
+7. make it play different games by giving it a file that points to game content
+8. make .exe?
+
+Aspirational features I would like to add, but not until core construction is done:
+- Items
+- Inventory
+- NPCs / conversations
+- Display images
+- Play audio

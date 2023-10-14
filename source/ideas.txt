@@ -1,8 +1,9 @@
+! This file is not meant to drive actual development, it's just some of my thoughts as I'm working. If you are a public contributor, you can ignore this file.
+
 # Format
 Moment Object
 Narrative
 Links{[List of hooks]: [List of moments]}
-
 
 # Mechanics
 User enters text
