@@ -8,8 +8,10 @@ def sanitize(text):
 	# characters from the text
 	for character in text:
 		if character.isalnum():
+			# ignore alphanumeric
 			pass
 		else:
+			# remove non alphanumeric characters
 			text = text.replace(character, '')
 	# then force it to all lowercase
 	# and remove trailing white space
@@ -36,6 +38,9 @@ def choose_from_links(user_choice, links):
 			# we choose from the corresponding list
 			# of moments from that link
 			if sanitize(user_choice) == sanitize(hook):
+				# we sanitize both user's input and the
+				# story file contents just in case, and
+				# to force them to be as close as possible
 				return choice(moments)
 
 
@@ -96,24 +101,47 @@ def read(moment):
 
 
 def main():
+	# main gameplay loop
+	# we need a 'pointer' to tell the game where we are in the
+	# story file, and a rewind variable to keep track of the
+	# previous pointer, because we may need to back-track;
+	# pointer has a default value of somewhere in the story
 	pointer = 'awake'
 	rewind = pointer
-	while True:		
+	while True:
+		# start looping
+		# first ask for a breakdown of the current moment, which
+		# you provide with the pointer (pointer = name of moment)
 		success, error, moment, narrative, links = read(pointer)
 		if success:
+			# now we're in the game
+			# mark this as the previous pointer in case the next
+			# one isn't succesful
 			rewind = pointer
+			# display the current moment's narrative
 			print(narrative)
+			# ask the player for their action
 			action = input('')
 			if action:
+				# if the story file is well written, we should
+				# be able to find a new moment to get to from
+				# the user's input; set the pointer there and
+				# then go back to the start of the loop
 				pointer = choose_from_links(action, links)
 			else:
 				# if user provided nothing and hit enter,
 				# just re-deliver the narration and let
-				# them try again.
+				# them try again
 				print('Empty!')
 		else:
-			# print(error)
+			# if we are here, we couldn't find a moment
+			# to move to from the user's input, OR the
+			# moment exists but there is incomplete data;
+			# so we'll have to rewind to the previous moment
+			# and run the loop again
 			pointer = rewind
 
 
-main()
+if __name__ == '__main__':
+	# run the game
+	main()

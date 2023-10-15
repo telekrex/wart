@@ -6,11 +6,10 @@ Narrative
 Links{[List of hooks]: [List of moments]}
 
 # Mechanics
-User enters text
-Need to sanitize the entry first (almost)
-Find fitting hook from action
-Randomly select from list of narratives if more than one
-Use a default hook if no action works
-Select a random hook if action is uncertain
+User enters text [X]
+Need to sanitize the entry first (almost) [X]
+Find fitting hook from action [X]
 
-Get it working first, then add inventory/items/clothes/scene stuff.
+Solve for when a moment cannot be found from the action.
+Solve for when the action is nothing.
+Advanced breakdown of action.
