@@ -1,8 +1,8 @@
 
 Construction (Core)
-1. make its mechanics work
-2. add fallbacks / error handling
-3. clean up the code
+1. make its mechanics work [x]
+2. add fallbacks / error handling [x]
+3. clean up the code [x]
 4. clean up the terminal display
 5. strengthen example content
 6. make a pretty [optional] GUI (pygame?)

@@ -6,7 +6,10 @@ sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay the
 
 
 # stand
-
+okay story
+-
+do stuff = awake
+leave = leave
 
 
 # sleep
