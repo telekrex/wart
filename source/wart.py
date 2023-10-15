@@ -109,6 +109,7 @@ def main():
 	pointer = 'awake'
 	rewind = pointer
 	while True:
+		print()
 		# start looping
 		# first ask for a breakdown of the current moment, which
 		# you provide with the pointer (pointer = name of moment)
@@ -120,8 +121,9 @@ def main():
 			rewind = pointer
 			# display the current moment's narrative
 			print(narrative)
+			print()
 			# ask the player for their action
-			action = input('')
+			action = input('What do you do? >> ')
 			if action:
 				# if the story file is well written, we should
 				# be able to find a new moment to get to from

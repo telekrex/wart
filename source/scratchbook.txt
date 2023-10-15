@@ -9,7 +9,3 @@ Links{[List of hooks]: [List of moments]}
 User enters text [X]
 Need to sanitize the entry first (almost) [X]
 Find fitting hook from action [X]
-
-Solve for when a moment cannot be found from the action.
-Solve for when the action is nothing.
-Advanced breakdown of action.
