@@ -9,3 +9,5 @@ Links{[List of hooks]: [List of moments]}
 User enters text [X]
 Need to sanitize the entry first (almost) [X]
 Find fitting hook from action [X]
+
+I think a good practice for writing games would be giving the player specific-ish choices and not leaving it as open as it gets.

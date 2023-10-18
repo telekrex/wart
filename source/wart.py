@@ -125,6 +125,10 @@ def main():
 			# ask the player for their action
 			action = input('What do you do? >> ')
 			if action:
+				# allow the player to exit with the special
+				# command: !quit
+				if action == '!quit':
+					break
 				# if the story file is well written, we should
 				# be able to find a new moment to get to from
 				# the user's input; set the pointer there and
@@ -134,7 +138,7 @@ def main():
 				# if user provided nothing and hit enter,
 				# just re-deliver the narration and let
 				# them try again
-				print('Empty!')
+				print()
 		else:
 			# if we are here, we couldn't find a moment
 			# to move to from the user's input, OR the
