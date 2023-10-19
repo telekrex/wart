@@ -3,7 +3,6 @@ from random import choice
 import os
 
 
-
 def sanitize(text):
 	# remove non alpha-numeric
 	# characters from the text

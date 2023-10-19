@@ -1,15 +1,17 @@
 # Wart
-A light and flexible text adventure game engine, written in Python.
+A text adventure game framework, written in Python.
 
 ### Intentions
-This is a work in progress! And just a side project, mostly for fun. Contributions are welcome so long as they make sense and do not bloat the project. See philosophy, CONTRIBUTING.md, and source/todo.txt for more.
+This is a work in progress! And just a side project, mostly for fun. The idea is that Wart is a framework for the story -- getting your narrative and player input rolling. The front end of your text adventure game could be built on top of it, using other tools. Contributions are welcome so long as they make sense and do not bloat the project. See philosophy, CONTRIBUTING.md, and ROADMAP.md for more.
 
 ### Philosophy
-- Free, open source
-- Non proprietary file formats
-- As light as possible on resources
-- Complexity resulting from simplicity
-- Sandbox-like text adventure game design
+- Light
+- Flexible
+- Sandbox-like design
+- Complexity from simplicity
 
 ### Who is this for?
-Authors, game developers, programmers, hobbyists, tinkerers, and whoever else wants to try!
+Authors, game developers, programmers, hobbyists, tinkerers, and whoever wants to try!
+
+### Requirements
+Only Python is required. Wart uses only native libraries and modules.
