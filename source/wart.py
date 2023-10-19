@@ -50,8 +50,7 @@ def read(moment):
 	# so I'll clean it up later, for now
 	# I just need it to do it's job
 	contents = []
-
-	try:	
+	try:
 		for file in os.listdir('story'):
 			with open(f'story/{file}') as c:
 				lines = c.read().split('\n')
@@ -78,7 +77,6 @@ def read(moment):
 		narrative = ''
 		links = []
 		return success, error, label, narrative, links
-
 	try:
 		label = contents[0].replace('#', '').strip()
 		narrative = contents[1].strip()
@@ -100,13 +98,13 @@ def read(moment):
 		return success, error, label, narrative, links
 
 
-def main():
+def main(starting_moment):
 	# main gameplay loop
 	# we need a 'pointer' to tell the game where we are in the
 	# story file, and a rewind variable to keep track of the
 	# previous pointer, because we may need to back-track;
 	# pointer has a default value of somewhere in the story
-	pointer = 'awake'
+	pointer = starting_moment
 	rewind = pointer
 	while True:
 		print()
@@ -127,7 +125,7 @@ def main():
 			if action:
 				# allow the player to exit with the special
 				# command: !quit
-				if action == '!quit':
+				if action == 'QUIT':
 					break
 				# if the story file is well written, we should
 				# be able to find a new moment to get to from
@@ -146,8 +144,7 @@ def main():
 			# so we'll have to rewind to the previous moment
 			# and run the loop again
 			pointer = rewind
+			print('ahahhhhhhhh')
 
 
-if __name__ == '__main__':
-	# run the game
-	main()
+main('awake')
