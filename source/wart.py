@@ -44,16 +44,23 @@ def choose_from_links(user_choice, links):
 				return choice(moments)
 
 
-def read(moment):
+def bat(directory):
+	for file in os.listdir(directory):
+		if file.startswith('.'):
+			with open(f'{directory}/{file}') as f:
+				return choice(f.read().split('\n'))
+
+
+def read(directory, moment):
 	# !
 	# this function is massively ugly
 	# so I'll clean it up later, for now
 	# I just need it to do it's job
 	contents = []
 	try:
-		for file in os.listdir('story'):
-			with open(f'story/{file}') as c:
-				lines = c.read().split('\n')
+		for file in os.listdir(directory):
+			with open(f'{directory}/{file}') as f:
+				lines = f.read().split('\n')
 				start = 0
 				end = 0
 				i = 0
@@ -98,7 +105,7 @@ def read(moment):
 		return success, error, label, narrative, links
 
 
-def main(starting_moment):
+def main(story_dir, starting_moment):
 	# main gameplay loop
 	# we need a 'pointer' to tell the game where we are in the
 	# story file, and a rewind variable to keep track of the
@@ -111,7 +118,7 @@ def main(starting_moment):
 		# start looping
 		# first ask for a breakdown of the current moment, which
 		# you provide with the pointer (pointer = name of moment)
-		success, error, moment, narrative, links = read(pointer)
+		success, error, moment, narrative, links = read(story_dir, pointer)
 		if success:
 			# now we're in the game
 			# mark this as the previous pointer in case the next
@@ -144,7 +151,7 @@ def main(starting_moment):
 			# so we'll have to rewind to the previous moment
 			# and run the loop again
 			pointer = rewind
-			print('ahahhhhhhhh')
+			print(bat(story_dir))
 
 
-main('awake')
+main('story', 'awake')

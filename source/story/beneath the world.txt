@@ -25,18 +25,3 @@ look around, look, see, check surroundings, turn around, get up, stand up, stand
 
 
 # leave
-
-
-
-
-
-
-
-&&&
-You try to do so but fail.
-You try but you cannot.
-Perhaps you should look around.
-Perhaps you should try something else.
-Unfortunately, you can't do that.
-It doesn't work like that.
-You can't do that.
