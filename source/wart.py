@@ -19,7 +19,7 @@ def sanitize(text):
 	return text
 
 
-def choose_from_links(user_choice, links):
+def choice_from_links(user_choice, links):
 	# look through the each link, where the list
 	# of links looks like this:
 	# links: [[[list of hooks], [list of moments]]]
@@ -44,114 +44,142 @@ def choose_from_links(user_choice, links):
 				return choice(moments)
 
 
-def bat(directory):
+def find_moment(story, moment):
+	#
+	moment = moment.strip().lower().replace('#', '')
+	moment_start = 0
+	moment_end = 0
+	current_line_number = -1
+	for line in story:
+		current_line_number += 1
+		if line.startswith('#'):
+			label = line.strip().lower().replace('#', '')
+			if label.strip() == moment.strip():
+				moment_start = current_line_number
+	counted_from_start = 0
+	for line in story[moment_start:]:
+		if not line:
+			moment_end = moment_start + counted_from_start
+			break
+		counted_from_start += 1
+	contents = story[moment_start:moment_end]
+	label = contents[0].replace('#', '').strip()
+	narrative = contents[1].strip()
+	links = []
+	for line in contents[3:]:
+		data = line.split(' = ')
+		hooks = data[0].split(', ')
+		moments = data[1].split(', ')
+		links.append([hooks, moments])
+	return label, narrative, links
+
+
+
+
+	# try:
+	# 	label = contents[0].replace('#', '').strip()
+	# 	narrative = contents[1].strip()
+	# 	links = []
+	# 	for line in contents[3:]:
+	# 		data = line.split(' = ')
+	# 		hooks = data[0].split(', ')
+	# 		moments = data[1].split(', ')
+	# 		links.append([hooks, moments])
+	# 	success = True
+	# 	error = ''
+	# 	return success, error, label, narrative, links
+	# except:
+	# 	success = False
+	# 	error = 'The moment we found had nothing happening.'
+	# 	label = ''
+	# 	narrative = ''
+	# 	links = []
+	# 	return success, error, label, narrative, links
+
+
+def load_story(directory):
+	story = []
+	nons = []
 	for file in os.listdir(directory):
 		if file.startswith('.'):
 			with open(f'{directory}/{file}') as f:
-				return choice(f.read().split('\n'))
-
-
-def read(directory, moment):
-	# !
-	# this function is massively ugly
-	# so I'll clean it up later, for now
-	# I just need it to do it's job
-	contents = []
-	try:
-		for file in os.listdir(directory):
+				nons = f.read().split('\n')
+		else:
 			with open(f'{directory}/{file}') as f:
 				lines = f.read().split('\n')
-				start = 0
-				end = 0
-				i = 0
 				for line in lines:
-					if line.startswith('#'):
-						label = line.strip().replace('#', '')
-						if label.strip() == moment.strip():
-							start = i
-					i += 1
-				i = 0
-				for line in lines[start:]:
-					if not line:
-						end = start + i
-						break
-					i += 1
-				contents = lines[start:end]
-	except:
-		success = False
-		error = 'Failed to load story content'
-		label = ''
-		narrative = ''
-		links = []
-		return success, error, label, narrative, links
-	try:
-		label = contents[0].replace('#', '').strip()
-		narrative = contents[1].strip()
-		links = []
-		for line in contents[3:]:
-			data = line.split(' = ')
-			hooks = data[0].split(', ')
-			moments = data[1].split(', ')
-			links.append([hooks, moments])
-		success = True
-		error = ''
-		return success, error, label, narrative, links
-	except:
-		success = False
-		error = 'The moment we found had nothing happening.'
-		label = ''
-		narrative = ''
-		links = []
-		return success, error, label, narrative, links
+					story.append(line)
+	return story, nons
 
 
-def main(story_dir, starting_moment):
+def slate(text):
+	print(text)
+	action = input('What do you do?')
+	return action
+
+
+def play(story_directory, starting_moment):
 	# main gameplay loop
-	# we need a 'pointer' to tell the game where we are in the
-	# story file, and a rewind variable to keep track of the
-	# previous pointer, because we may need to back-track;
-	# pointer has a default value of somewhere in the story
+	# we need a 'pointer' to tell the game which
+	# moment we are looking at, and right now,
+	# it needs somewhere to start
+	story, nons = load_story(story_directory)
 	pointer = starting_moment
-	rewind = pointer
-	while True:
-		print()
-		# start looping
-		# first ask for a breakdown of the current moment, which
-		# you provide with the pointer (pointer = name of moment)
-		success, error, moment, narrative, links = read(story_dir, pointer)
-		if success:
-			# now we're in the game
-			# mark this as the previous pointer in case the next
-			# one isn't succesful
-			rewind = pointer
-			# display the current moment's narrative
-			print(narrative)
-			print()
-			# ask the player for their action
-			action = input('What do you do? >> ')
-			if action:
-				# allow the player to exit with the special
-				# command: !quit
-				if action == 'QUIT':
-					break
-				# if the story file is well written, we should
-				# be able to find a new moment to get to from
-				# the user's input; set the pointer there and
-				# then go back to the start of the loop
-				pointer = choose_from_links(action, links)
-			else:
-				# if user provided nothing and hit enter,
-				# just re-deliver the narration and let
-				# them try again
-				print()
-		else:
-			# if we are here, we couldn't find a moment
-			# to move to from the user's input, OR the
-			# moment exists but there is incomplete data;
-			# so we'll have to rewind to the previous moment
-			# and run the loop again
-			pointer = rewind
-			print(bat(story_dir))
+
+	x = 0
+	while x < 7:
+		x += 1
+		try:
+			moment, narration, links = find_moment(story, pointer)
+		except:
+			narration = choice(nons)
+		action = slate(narration)
+		pointer = choice_from_links(action, links)
 
 
-main('story', 'awake')
+play('story', 'awake')
+
+
+
+
+# 		print()
+# 		# start looping
+# 		# first ask for a breakdown of the current moment, which
+# 		# you provide with the pointer (pointer = name of moment)
+# 		success, error, moment, narrative, links = read(story_dir, pointer)
+# 		if success:
+# 			# now we're in the game
+# 			# mark this as the previous pointer in case the next
+# 			# one isn't succesful
+# 			rewind = pointer
+# 			# display the current moment's narrative
+# 			print(narrative)
+# 			print()
+# 			# ask the player for their action
+# 			action = input('What do you do? >> ')
+# 			if action:
+# 				# allow the player to exit with the special
+# 				# command: !quit
+# 				if action == 'QUIT':
+# 					break
+# 				# if the story file is well written, we should
+# 				# be able to find a new moment to get to from
+# 				# the user's input; set the pointer there and
+# 				# then go back to the start of the loop
+# 				pointer = choose_from_links(action, links)
+# 			else:
+# 				# if user provided nothing and hit enter,
+# 				# just re-deliver the narration and let
+# 				# them try again
+# 				print()
+# 		else:
+# 			# if we are here, we couldn't find a moment
+# 			# to move to from the user's input, OR the
+# 			# moment exists but there is incomplete data;
+# 			# so we'll have to rewind to the previous moment
+# 			# and run the loop again
+# 			pointer = rewind
+# 			print(bat(story_dir))
+#
+
+# main('story', 'awake')
