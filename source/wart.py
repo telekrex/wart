@@ -3,6 +3,21 @@ from random import choice
 import os
 
 
+def load_story(directory):
+	story = []
+	nons = []
+	for file in os.listdir(directory):
+		if file.startswith('.'):
+			with open(f'{directory}/{file}') as f:
+				nons = f.read().split('\n')
+		else:
+			with open(f'{directory}/{file}') as f:
+				lines = f.read().split('\n')
+				for line in lines:
+					story.append(line)
+	return story, nons
+
+
 def sanitize(text):
 	# remove non alpha-numeric
 	# characters from the text
@@ -97,24 +112,10 @@ def find_moment(story, moment):
 	# 	return success, error, label, narrative, links
 
 
-def load_story(directory):
-	story = []
-	nons = []
-	for file in os.listdir(directory):
-		if file.startswith('.'):
-			with open(f'{directory}/{file}') as f:
-				nons = f.read().split('\n')
-		else:
-			with open(f'{directory}/{file}') as f:
-				lines = f.read().split('\n')
-				for line in lines:
-					story.append(line)
-	return story, nons
-
-
 def slate(text):
-	print(text)
-	action = input('What do you do?')
+	#
+	print('\n', text, '\n')
+	action = input('What do you do? >> ')
 	return action
 
 
@@ -127,7 +128,7 @@ def play(story_directory, starting_moment):
 	pointer = starting_moment
 
 	x = 0
-	while x < 7:
+	while x < 99:
 		x += 1
 		try:
 			moment, narration, links = find_moment(story, pointer)
@@ -135,11 +136,8 @@ def play(story_directory, starting_moment):
 			narration = choice(nons)
 		action = slate(narration)
 		pointer = choice_from_links(action, links)
-
-
-play('story', 'awake')
-
-
+		if action == 'QUIT':
+			break
 
 
 # 		print()
@@ -180,6 +178,3 @@ play('story', 'awake')
 # 			# and run the loop again
 # 			pointer = rewind
 # 			print(bat(story_dir))
-#
-
-# main('story', 'awake')
