@@ -4,7 +4,11 @@
 
 <h1 align="center" style="margin-top: -10px"> Wart </h1>
 <p align="center" style="width: 100;">
-   A text adventure game framework, written in Python.
+   An open source text adventure game framework, written in Python.
+   <!--
+   <a> Docs </a>
+   <a> Download </a>
+   -->
 </p>
 
 ### Intentions
@@ -15,6 +19,8 @@ Work in progress! And mostly just for fun. The idea is that Wart is a framework 
 - Flexible
 - Sandbox-like design
 - Complexity from simplicity
+- Native libraries only; stands up on its own
 
 ### Getting Started
 Only Python is required. Wart uses only native libraries and modules.
+Documentation is not written yet.
