@@ -31,6 +31,15 @@ def load_story(directory):
 	return story, nons
 
 
+def simplify(text):
+	# remove terms from the text
+	# that will never be useful
+	text = str(text)
+	for term in [' the ', ' a ']:
+		text = text.replace(term, '')
+	return text
+
+
 def sanitize(text):
 	# remove non alpha-numeric
 	# characters from the text
@@ -48,6 +57,9 @@ def sanitize(text):
 
 
 def choice_from_links(user_choice, links):
+	# first, quickly, verify the contents of
+	# user choice as a string and simplify
+	user_choice = simplify(str(user_choice))
 	# look through the each link, where the list
 	# of links looks like this:
 	# links: [[[list of hooks], [list of moments]]]
@@ -110,13 +122,23 @@ def find_moment(story, moment):
 	# label is the name of the moment, in case needed
 	label = contents[0].replace('#', '').strip()
 	# narrative is the narration of the moment
-	narrative = contents[1].strip()
+	# this can be multiple lines, so we'll build
+	# a list going from index 1 until we hit the
+	# '-' delimiter
+	narrative = []
+	narr_end = 1
+	for line in contents[1:]:
+		if line != '-':
+			narrative.append(line)
+			narr_end += 1
+		else:
+			break
 	# links are a list of two lists;
 	# one is the hooks that match user input,
 	# the other is the corresponding potential
 	# moments to call from a hook
 	links = []
-	for line in contents[3:]:
+	for line in contents[narr_end+1:]:
 		data = line.split(' = ')
 		hooks = data[0].split(', ')
 		moments = data[1].split(', ')
@@ -128,9 +150,12 @@ def find_moment(story, moment):
 
 def slate(text):
 	# show the given text
-	print('\n', text, '\n')
-	# and ask for a reponse
-	action = input(' >> ')
+	print()
+	for line in text:
+		print(line)
+	print()
+	# then ask for a reponse
+	action = input('> ')
 	return action
 
 
@@ -166,7 +191,7 @@ def play(story_directory, starting_moment):
 			# nons, that is why that exists, and why it's designed
 			# to be customizable. you can use this to tell the player
 			# things like how silly they are being.
-			narration = choice(nons)
+			narration = [choice(nons)]
 		# in either case, once we are at this poing in the loop,
 		# we should have a narration to provide one way or another.
 		# show that to the player, and ask for input.
