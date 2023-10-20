@@ -1,5 +1,22 @@
+# start
+welcome, would you like instructions?
+-
+yes = instructions
+no = ready
+
+# instructions
+Type your response to the narrative, then press ENTER. At any time, type QUIT to quit. Enter OK to continue on to the story, or BACK to return to the start screen.
+-
+ok = ready
+back = starts
+
+# ready
+Welcome to WART DEMO. Enter START to continue.
+-
+start = awake
+
 # awake
-You awake on the ground. It's cool and damp, thick with moss. The ground is black stone, wet with clear water, and foliage creeping up through the cracks. Beds of moss lay in patches. The air is thin, and it feels like it just rained. You are outside, but surrounded by walls of black stone.
+You awake on the ground. It's cool and damp, thick with moss. The ground is black stone, wet with clear water, and foliage creeping up through the cracks. Beds of moss lay in patches. The air is thin, and it feels like it just rained. You are outside, but surrounded by walls of black stone. What would you like to do?
 -
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
 sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare

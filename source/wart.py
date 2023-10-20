@@ -52,7 +52,7 @@ def choice_from_links(user_choice, links):
 			# and if one matches the user choice,
 			# we choose from the corresponding list
 			# of moments from that link
-			if sanitize(user_choice) == sanitize(hook):
+			if sanitize(user_choice)[0:4] == sanitize(hook)[0:4]:
 				# we sanitize both user's input and the
 				# story file contents just in case, and
 				# to force them to be as close as possible
@@ -115,7 +115,7 @@ def find_moment(story, moment):
 def slate(text):
 	#
 	print('\n', text, '\n')
-	action = input('What do you do? >> ')
+	action = input(' >> ')
 	return action
 
 
@@ -136,7 +136,7 @@ def play(story_directory, starting_moment):
 			narration = choice(nons)
 		action = slate(narration)
 		pointer = choice_from_links(action, links)
-		if action == 'QUIT':
+		if action.lower() == 'quit':
 			break
 
 

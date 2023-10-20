@@ -1,2 +1,2 @@
 from wart import *
-play('story', 'awake')
+play('story', 'start')
