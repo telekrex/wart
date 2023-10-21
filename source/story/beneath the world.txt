@@ -1,42 +1,86 @@
-# start
-welcome, would you like instructions?
-Testing multi-line support
+# init
+Welcome to Wart - Adventure Game
+A text adventure framework demo.
+Would you like instructions?
+Yes or no?
 -
-yes = instructions
-no = ready
+yes, sure, ok = instructions
+no, start = start
+* = start
 
 # instructions
-Type your response to the narrative, then press ENTER. At any time, type QUIT to quit. Enter OK to continue on to the story, or BACK to return to the start screen.
+Instructions:
+Story will be printed onto the screen.
+Simply type your response, then hit ENTER.
+At any point, you can exit the game by typing "Quit".
+Ok?
 -
-ok = ready
-back = starts
+ok = start
+no, repeat, help = instructions
+* = start
 
-# ready
-Welcome to WART DEMO.
-Enter START to continue.
+# start
+You awake on the ground, of dirt and black stone.
+It's cool and damp, thick with moss creeping through the cracks.
+There's a hole next to you, and there's a light coming from inside.
+There's also a chest nearby.
+What would you like to do?
 -
-start = awake
-
-# awake
-You awake on the ground.
-It's cool and damp, thick with moss. The ground is black stone, wet with clear water, and foliage creeping up through the cracks.
-Beds of moss lay in patches. The air is thin, and it feels like it just rained. You are outside, but surrounded by walls of black stone. What would you like to do?
--
+hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+chest, go to chest, open chest, examine chest, open the chest = openchest
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
 sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
+shout, scream, yell, call = callhelp
+die = death
 
+# enterhole
+...
+-
+..
+
+# openchest
+You approach the chest and realize it's unlocked.
+You peer inside, and find it's empty.
+There's nothing else around you except the rocks and the hole, lit from below.
+What would you like to do?
+-
+hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
+sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
+shout, scream, yell, call = callhelp
+die = death
+
+# death
+You fall over and die, right there.
+GAME OVER.
+-
+
+# callhelp
+You scream for help, but no one answers.
+-
+? = ?
 
 # stand
-okay story
+You stand up. The air is thin, and a bit chilly.
 -
 do stuff = awake
 leave = leave
 
 
 # sleep
-You turn over and fall back asleep. After a long darkness, you awake again. The air feels the same, the light doesn't appear to have changed. You are unsure how much time has passed, but you feel rested.
+You turn over and fall back asleep.
+After a long darkness, you awake again.
+The air feels the same, nothing has changed.
+You are unsure how much time has passed, but you feel rested.
+You are still laying next to a hole, and a chest.
+What would you like to do?
 -
+hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+chest, go to chest, open chest, examine chest, open the chest = openchest
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
+sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
+shout, scream, yell, call = callhelp
+die = death
 
 
 # nightmare
