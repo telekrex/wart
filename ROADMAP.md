@@ -11,6 +11,8 @@
 - [X] Support multiple lines in narration moments
 - [X] Refactor main implementation to make Wart an import, user uses their own project file
 - [X] A function for choosing where and how to load content from, for project files
+- [ ] A method for authors to provide a hook that override's error state
+- [ ] Support 'nons' in the same files as story
 - [ ] Strengthen example content to ~100 lines and demonstrate the flexibility
 - [ ] Documentation
 

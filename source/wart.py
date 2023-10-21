@@ -35,7 +35,8 @@ def simplify(text):
 	# remove terms from the text
 	# that will never be useful
 	text = str(text)
-	for term in [' the ', ' a ']:
+	for term in [' the ', ' a ', 'use ', ' use ',
+				 'put ', 'do ', ' do ', 'go ', ' go ']:
 		text = text.replace(term, '')
 	return text
 
