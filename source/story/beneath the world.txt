@@ -4,8 +4,8 @@ A text adventure framework demo.
 Would you like instructions?
 Yes or no?
 -
-yes, sure, ok = instructions
-no, start = start
+yes, sure, ok, y = instructions
+no, n, start = start
 * = start
 
 # instructions
@@ -16,7 +16,7 @@ At any point, you can exit the game by typing "Quit".
 Ok?
 -
 ok = start
-no, repeat, help = instructions
+no, n, again, repeat, help = instructions
 * = start
 
 # start
