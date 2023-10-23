@@ -1,0 +1,5 @@
+a hook named * means we override an error state with the moments tied to that hook
+
+if choice from links fails, check the links for a hook that starts with '*', if exists, use that hook and try again
+
+refer to wart as a purely functional interactive fiction framework, because thats what it is. instead of trying to be a game engine, just call it what it is. a framework for text adventures that are focused on narrative and does not include the front end.

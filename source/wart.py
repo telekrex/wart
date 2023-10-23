@@ -32,12 +32,25 @@ def load_story(directory):
 
 
 def simplify(text):
+	# this function AGGRESSIVELY
+	# cuts down the input text to
+	# a form that's not only super
+	# simple, but easy to match with
+	# hooks placed in author's stories.
+	# first,
 	# remove terms from the text
 	# that will never be useful
 	text = str(text)
 	for term in [' the ', ' a ', 'use ', ' use ',
-				 'put ', 'do ', ' do ', 'go ', ' go ']:
+				 'put ', 'do ', ' do ', 'go ', ' go ',
+				 'stay ', 'put ']:
 		text = text.replace(term, '')
+	# then, split the text
+	# into a list of its terms
+	terms = text.split(' ')
+	# rebuild the text, but
+	# without the spaces
+	text = ''.join(text)
 	return text
 
 
@@ -74,6 +87,8 @@ def choice_from_links(user_choice, links):
 		# hooks: [list of hooks]
 		# moments: [list of moments]
 		for hook in hooks:
+			# simplify the hook
+			hook = simplify(hook)
 			# look through this link's hooks,
 			# and if one matches the user choice,
 			# we choose from the corresponding list
