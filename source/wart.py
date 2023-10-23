@@ -41,9 +41,9 @@ def simplify(text):
 	# remove terms from the text
 	# that will never be useful
 	text = str(text)
-	for term in [' the ', ' a ', 'use ', ' use ',
-				 'put ', 'do ', ' do ', 'go ', ' go ',
-				 'stay ', 'put ']:
+	for term in ['the ', 'a ', 'use ', 'use ',
+				 'put ', 'do ', 'go ', 'to ',
+				 'stay ', 'put ', 'in ']:
 		text = text.replace(term, '')
 	# then, split the text
 	# into a list of its terms
@@ -87,8 +87,6 @@ def choice_from_links(user_choice, links):
 		# hooks: [list of hooks]
 		# moments: [list of moments]
 		for hook in hooks:
-			# simplify the hook
-			hook = simplify(hook)
 			# look through this link's hooks,
 			# and if one matches the user choice,
 			# we choose from the corresponding list

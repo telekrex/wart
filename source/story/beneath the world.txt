@@ -34,9 +34,10 @@ shout, scream, yell, call = callhelp
 die = death
 
 # enterhole
-...
+you enter the hole!
 -
-..
+1 = death
+2 = death
 
 # openchest
 You approach the chest and realize it's unlocked.
