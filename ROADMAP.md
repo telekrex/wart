@@ -17,8 +17,4 @@
 - [ ] Documentation
 
 ## Maybe
-- [ ] Create a branch(?) with a front-end example
-
-## Aspirational features
-- [ ] Items / Inventory
-- [ ] NPCs / conversations
+- [ ] Create a branch with? front-end example
