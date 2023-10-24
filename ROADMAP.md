@@ -11,10 +11,8 @@
 - [X] Support multiple lines in narration moments
 - [X] Refactor main implementation to make Wart an import, user uses their own project file
 - [X] A function for choosing where and how to load content from, for project files
-- [ ] A method for authors to provide a hook that override's error state
-- [ ] Support 'nons' in the same files as story
+- [ ] A method for authors to provide a hook that override's error state (a hook named * means we override an error state with the moments tied to that hook
+if choice from links fails, check the links for a hook that starts with '*', if exists, use that hook and try again), I just can't find a clean way to impliment this in the main loop unless I work on this in the morning hours.
+- [X] Support 'nons' in the same files as story
 - [ ] Strengthen example content to ~100 lines and demonstrate the flexibility
 - [ ] Documentation
-
-## Maybe
-- [ ] Create a branch with? front-end example

@@ -10,21 +10,16 @@ def load_story(directory):
 	nons = []
 	# loop over files in the directory
 	for file in os.listdir(directory):
-		if file.startswith('.'):
-			# files starting with . are used to list
-			# responses to game not finding something
-			# to do with the user's input. I want to
-			# change this at some point to be stored
-			# within any story file along with the
-			# moments. sometime later.
-			with open(f'{directory}/{file}') as f:
-				nons = f.read().split('\n')
-		else:
-			# otherwise, the file can be used for
-			# story content. grab the lines.
-			with open(f'{directory}/{file}') as f:
-				lines = f.read().split('\n')
-				for line in lines:
+		with open(f'{directory}/{file}') as f:
+			lines = f.read().split('\n')
+			for line in lines:
+				if line.startswith('/'):
+					# nons are responses to use
+					# when the game doesn't find
+					# a clear route forward.
+					nons.append(line)
+				else:
+					# anything else is just story.
 					story.append(line)
 	# return both the 'nons' and the story content
 	# as two lists, one for each.
@@ -205,7 +200,8 @@ def play(story_directory, starting_moment):
 			# nons, that is why that exists, and why it's designed
 			# to be customizable. you can use this to tell the player
 			# things like how silly they are being.
-			narration = [choice(nons)]
+			# also, remove the '/' from the text.
+			narration = [choice(nons).replace('/', '')]
 		# in either case, once we are at this poing in the loop,
 		# we should have a narration to provide one way or another.
 		# show that to the player, and ask for input.
