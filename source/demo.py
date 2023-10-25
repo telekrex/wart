@@ -1,3 +1,3 @@
 #!/usr/bin/env python3
-from wart import *
+from wart import play
 play('demo story', 'init')

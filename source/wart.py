@@ -10,7 +10,7 @@ def load_story(directory):
 	nons = []
 	# loop over files in the directory
 	for file in os.listdir(directory):
-		with open(f'{directory}/{file}') as f:
+		with open(f'{directory}/{file}', encoding='UTF-8') as f:
 			lines = f.read().split('\n')
 			for line in lines:
 				if line.startswith('/'):
@@ -45,7 +45,7 @@ def simplify(text):
 	terms = text.split(' ')
 	# rebuild the text, but
 	# without the spaces
-	text = ''.join(text)
+	text = ''.join(terms)
 	return text
 
 
