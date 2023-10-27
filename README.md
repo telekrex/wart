@@ -4,7 +4,7 @@
 
 <h1 align="center" style="margin-top: -10px"> Wart </h1>
 <p align="center" style="width: 100;">
-   An open source purely functional interactive fiction framework, written in Python.
+   An open source purely functional interactive fiction framework, written in Python.<br>
 </p>
 
 ### Intentions
