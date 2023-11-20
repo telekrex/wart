@@ -11,5 +11,5 @@
 - [X] Refactor main implementation to make Wart an import, user uses their own project file
 - [X] A function for choosing where and how to load content from, for project files
 - [X] Support 'nons' in the same files as story
-- [ ] Strengthen example content to ~75 lines and demonstrate the flexibility
-- [ ] Documentation
+- [X] Strengthen example content to ~75 lines and demonstrate the flexibility
+- [X] Documentation

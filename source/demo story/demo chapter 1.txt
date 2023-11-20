@@ -24,7 +24,7 @@ There's a hole next to you, and there's a light coming from inside.
 There's also a chest nearby.
 What would you like to do?
 -
-hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+hole, enter hole, go in hole, go into the hole, go towards the hole, crawl in hole, go down hole = enterhole
 chest, go to chest, open chest, examine chest, open the chest = openchest
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
 sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
@@ -41,10 +41,11 @@ no, leave, n, exit, get out of hole, leave hole = exithole
 die = death
 
 # win
-you've won the game?
-play again or quit?
+You've won the game!!!
+Congratulations!
+Play again or quit?
 -
-play again = start
+yes, yeah, sure, okay, ok, okedoke, play, again = start
 
 # openchest
 You approach the chest and realize it's unlocked.
@@ -52,7 +53,7 @@ You peer inside, and find it's empty.
 There's nothing else around you except the rocks and the hole, lit from below.
 What would you like to do?
 -
-hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+hole, enter hole, go in hole, go into the hole, go towards the hole, crawl in hole, go down hole = enterhole
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
 sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
 shout, scream, yell, call = callhelp
@@ -66,7 +67,7 @@ GAME OVER.
 # stand
 You stand up. The air is thin, and a bit chilly.
 -
-hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+hole, enter hole, go in hole, go into the hole, go towards the hole, crawl in hole, go down hole = enterhole
 chest, go to chest, open chest, examine chest, open the chest = openchest
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
 sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
@@ -82,7 +83,7 @@ You are unsure how much time has passed, but you feel rested.
 You are still laying next to a hole, and a chest.
 What would you like to do?
 -
-hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+hole, enter hole, go in hole, go into the hole, go towards the hole, crawl in hole, go down hole = enterhole
 chest, go to chest, open chest, examine chest, open the chest = openchest
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
 sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
@@ -93,7 +94,7 @@ die = death
 # nightmare
 You turn over and fall back asleep. Not long after, you feel an itch on your arm. Jolting awake, you see a black scorpion the size of a rabbit curiously crawling up your arm. Without hesitation, you shuffle to your feet - and a second, later the scorpion is gone. You are then back on the ground, now waking up from a false awakening. You are unsure how much time has passed, but you feel very, very awake now.
 -
-hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+hole, enter hole, go in hole, go into the hole, go towards the hole, crawl in hole, go down hole = enterhole
 chest, go to chest, open chest, examine chest, open the chest = openchest
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
 sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
