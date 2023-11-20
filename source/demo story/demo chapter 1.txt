@@ -4,9 +4,8 @@ A text adventure framework demo.
 Would you like instructions?
 Yes or no?
 -
-yes, sure, ok, y = instructions
+yes, sure, ok, y, yeah, yep, yup = instructions
 no, n, start = start
-* = start
 
 # instructions
 Instructions:
@@ -15,9 +14,8 @@ Simply type your response, then hit ENTER.
 At any point, you can exit the game by typing "Quit".
 Ok?
 -
-ok = start
+ok, okay, k, got it, oke, okedoke = start
 no, n, again, repeat, help = instructions
-* = start
 
 # start
 You awake on the ground, of dirt and black stone.
@@ -30,14 +28,23 @@ hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
 chest, go to chest, open chest, examine chest, open the chest = openchest
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
 sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
-shout, scream, yell, call = callhelp
+shout, scream, yell, call = stand
 die = death
 
 # enterhole
 you enter the hole!
+inside you find a treasure.
+do you take the treasure?
 -
-1 = death
-2 = death
+take treasure, yes, yeah, y, take, treasure = win
+no, leave, n, exit, get out of hole, leave hole = exithole
+die = death
+
+# win
+you've won the game?
+play again or quit?
+-
+play again = start
 
 # openchest
 You approach the chest and realize it's unlocked.
@@ -56,16 +63,15 @@ You fall over and die, right there.
 GAME OVER.
 -
 
-# callhelp
-You scream for help, but no one answers.
--
-? = ?
-
 # stand
 You stand up. The air is thin, and a bit chilly.
 -
-do stuff = awake
-leave = leave
+hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+chest, go to chest, open chest, examine chest, open the chest = openchest
+look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
+sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
+shout, scream, yell, call = callhelp
+die = death
 
 
 # sleep
@@ -87,12 +93,12 @@ die = death
 # nightmare
 You turn over and fall back asleep. Not long after, you feel an itch on your arm. Jolting awake, you see a black scorpion the size of a rabbit curiously crawling up your arm. Without hesitation, you shuffle to your feet - and a second, later the scorpion is gone. You are then back on the ground, now waking up from a false awakening. You are unsure how much time has passed, but you feel very, very awake now.
 -
+hole, enter hole, go in hole, crawl in hole, go down hole = enterhole
+chest, go to chest, open chest, examine chest, open the chest = openchest
 look around, look, see, check surroundings, turn around, get up, stand up, stand = stand
-
-
-# leave
-leaving
-
+sleep, go to sleep, shut eyes, roll over, stay, stay on the ground, lay, lay there = sleep, nightmare
+shout, scream, yell, call = callhelp
+die = death
 
 
 /You try to do so but fail.
