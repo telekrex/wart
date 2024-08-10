@@ -8,7 +8,9 @@
 </p>
 
 ### Intentions
-A work in progress project I started for fun. Wart is for getting your narrative and input working, a front end could be built on top of it using other tools. Contributions are welcome so long as they make sense and do not bloat the project. See philosophy, CONTRIBUTING.md, and ROADMAP.md for more.
+A work in progress project I started for fun. Wart is for getting your narrative and input working, a front end could be built on top of it using other tools. Contributions are welcome so long as they make sense and do not bloat the project. See philosophy, CONTRIBUTING.md, and ROADMAP.md for more.  
+
+> As of August 10th 2024, since I haven't worked on this in over 9 months, I am archiving this project. I've actually started to work on something similar to this but with a better approach, I'm not sure if it will end up on GitHub or not, because I have a game I want to make with it, and we'll see how that all goes. To any aspiring developers/game designers, feel free to use this project as inspiration or a basis for something if you wish.
 
 ### Philosophy
 - Light
