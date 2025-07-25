@@ -1,7 +1,3 @@
-<div align="center">
-  <img src="docs/toads.png" height="200"/>
-</div>
-
 <h1 align="center" style="margin-top: -10px"> Wart </h1>
 <p align="center" style="width: 100;">
    An open source purely functional interactive fiction framework, written in Python.<br>
@@ -10,7 +6,9 @@
 ### Intentions
 A work in progress project I started for fun. Wart is for getting your narrative and input working, a front end could be built on top of it using other tools. Contributions are welcome so long as they make sense and do not bloat the project. See philosophy, CONTRIBUTING.md, and ROADMAP.md for more.  
 
-> As of August 10th 2024, since I haven't worked on this in over 9 months, I am archiving this project. I've actually started to work on something similar to this but with a better approach, I'm not sure if it will end up on GitHub or not, because I have a game I want to make with it, and we'll see how that all goes. To any aspiring developers/game designers, feel free to use this project as inspiration or a basis for something if you wish.
+> August 10th 2024: Since I haven't worked on this in over 9 months, I am archiving/closing this project. I've actually started to work on something similar to this but with a better approach, I'm not sure if it will end up on GitHub or not, because I have a game I want to make with it, and we'll see how that all goes. To any aspiring developers/game designers, feel free to use this project as inspiration or a basis for something if you wish.
+
+> July 25th 2025: Made public domain.
 
 ### Philosophy
 - Light
@@ -40,3 +38,9 @@ Under the narrative text goes a list of *links*. A single link consists of one l
 
 ## How to play
 To play a game, simply create a python script that imports Wart.py, then `play(story directory, starting moment)`. See demo.py for how that looks. As stated above, this project isn't focused on the front end. The play function will simply run the game in your terminal of choice, but you can extend this to a custom front end if you want, there are lots of tools out there for doing this, such as Pygame.
+
+## Credits
+Written by telekrex.
+
+## License
+This project is released into the public domain. See the [LICENSE](LICENSE) file for details.
